@@ -1,5 +1,5 @@
 fn main() {
-    let amt:i32 = 123456789;
+    let amt:u32 = 123456789;
     let result = convert(&amt, AmountConversion::Burmese);
     print!("{}", result);
 }
@@ -11,16 +11,16 @@ enum AmountConversion{
     English
 }
 
-fn convert(value: &i32, conversion: AmountConversion) -> &str{
-    match conversion{
+fn convert(value: &u32, conversion: AmountConversion) -> &str{
+    return match conversion {
         AmountConversion::Burmese => {
-            return BurmeseAmountConverter::convert(value);
+            BurmeseAmountConverter::convert(value)
         },
         AmountConversion::English => {
-            return "";
+            ""
         },
-        AmountConversion::Chinese => {  
-            return "";
+        AmountConversion::Chinese => {
+            ""
         }
     }
 }
@@ -29,7 +29,7 @@ fn convert(value: &i32, conversion: AmountConversion) -> &str{
 
 
 mod BurmeseAmountConverter{
-    pub fn convert(value: &i32) -> &str{
+    pub fn convert(value: &u32) -> &str{
         return "တစ်နှစ်သုံးလေးငါးခြောက်";
     }
 }
