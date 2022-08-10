@@ -6,7 +6,7 @@ use amount_to_words::AmountConversion;
 
 fn main() {
     let amt:u128 = 1234567899;
-    let result = AmountToWords::convert(&amt, AmountConversion::Burmese);
+    let result = AmountToWords::convertTo(&123465, AmountConversion::Burmese);
     print!("{}", result);
 }
 
