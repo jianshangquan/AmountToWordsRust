@@ -36,8 +36,7 @@ pub mod AmountToWords{
             result = convertThein(last_thein_amt);
             if first_thein_amt.len() != 0 {
                 let mut temp = convertThein(first_thein_amt);
-                // let len = last_thein_amt.len();
-                // if len == 0 {temp.push_str("သိန်း")};
+                if result.len() == 0 {temp.push_str("သိန်း")};
                 temp.push_str(result.as_str());
                 result = temp;
             }
